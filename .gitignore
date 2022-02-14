@@ -1,0 +1,5 @@
+# A. FILES
+.env
+
+#B. FOLDERS
+node_modules/

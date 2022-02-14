@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Fullstack App</title>
+</head>
+
+<body>
+    <body bgcolor="black">
+        <div class="md:flex md:items-center md:justify-between md:space-x-5">
+  <div class="flex items-start space-x-5">
+    <div class="flex-shrink-0">
+      <div class="relative">
+        <img class="h-16 w-16 rounded-full" src="https://i.pinimg.com/originals/48/aa/3a/48aa3a9c95a8695ebdd637db31aa15eb.jpg" alt="">
+        <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
+      </div>
+    </div>
+    
+    <!--
+      Use vertical padding to simulate center alignment when both lines of text are one line,
+      but preserve the same layout if the text wraps without making the image jump around.
+    -->
+    
+
+
+  {{#if currentUser}}
+
+    <div class="pt-1.5">
+      <a href="#" class="text-2xl font-bold text-white">GRR! Comics</></a>
+      <p class="text-sm font-medium text-white">your favorite comic store. <h1 class="text-sm font-medium text-white"> Hello! <a href="/profile" class="text-pink-500">{{currentUser.username}}</a></h1></p>
+    </div>
+  </div>
+
+    <a href="/logout"
+    class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 
+    border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+    Log out
+    </a>
+
+  {{else}}
+
+  <div class="pt-1.5">
+      <a href="/home" class="text-2xl font-bold text-white">GRR! Comics</></a>
+      <p class="text-sm font-medium text-white">your favorite  <a href="/login" class="text-pink-500">comic store</a></p>
+    </div>
+  </div>
+
+  <a href="/login">
+  <div class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse 
+  sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
+    <button 
+    type="button" 
+    class="inline-flex items-center justify-center px-4 py-2 border border-black-700 shadow-sm 
+    text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 
+    focus:ring-offset-gray-100 focus:ring-indigo-500">Log In 
+    </button>
+    </a>
+
+    <a href="/register">
+    <button 
+    type="button" 
+    class="inline-flex items-center justify-center px-4 py-2 border border-gray text-sm font-medium
+     rounded-md shadow-sm text-white bg-pink-400 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+     focus:ring-offset-gray-100 focus:ring-indigo-500">Sign In
+    </button>
+    </a>
+
+  {{/if}}
+  </div>
+</div>
+
+<hr /> 
+</body>
+
+<div class="bg-white">
+  {{{ body }}}
+</div>
+</body>
+
+</html>
