@@ -1,0 +1,76 @@
+<h1>Hola, soy la pagina de ventas</h1>
+
+<form action="/sell" method="POST">
+<ol>
+    <li>
+    <label>Comic name</label>
+    <input name="comicName" type="text" />
+    </li>
+
+    <li>
+    <label>Volume number</label>
+    <input name="volumeNumber" type="number" />
+    </li>
+
+    <li>
+    <label>Publication date</label>
+    <input name="published" type="date" />
+    </li>
+
+    <li>
+    <label>Writer</label>
+    <input name="writer" type="text" />
+    </li>
+
+    <li>
+    <label>Penciler</label>
+    <input name="penciler" type="text" />
+    </li>
+
+    <li>
+    <label>Cover artist</label>
+    <input name="coverArtist" type="text" />
+    </li>
+
+    <li>
+    <label class="block text-sm font-medium text-gray-700">Description</label>
+    <div class="mt-1">
+    <input  name="descrption" type="text" />
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="condition" class="block text-sm font-medium text-gray-700">Condition</label>
+    <select id="condition" name="condition" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+    <option>New</option>
+    <option>Used</option>
+    </select>
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="shipping" class="block text-sm font-medium text-gray-700">Shipping</label>
+    <select id="shipping" name="shipping" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+    <option>For Free</option>
+    <option>Shipping Collect</option>
+    </select>
+    </div>
+    </li>
+    
+    <li>
+    <div>
+    <label for="studio" class="block text-sm font-medium text-gray-700">Studio</label>
+    <select id="studio" name="studio" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+    <option>Marvel studios</option>
+    <option>Other collections</option>
+    </select>
+    </div>
+    </li>
+
+    <button type="submit">Publish</button>
+
+</ol>
+
+</form>

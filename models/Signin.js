@@ -2,9 +2,6 @@
 const { contentType } = require("express/lib/response")
 const mongoose  =require("mongoose")
 
-
-
-
 //2. SCHEMA
 
 const UserSchema = mongoose.Schema({

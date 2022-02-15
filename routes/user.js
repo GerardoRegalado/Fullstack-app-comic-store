@@ -26,10 +26,5 @@ router.get("/profile",routeGuard.privateAreas, userController.profile)
 
 
 
-
-
-
-
-
-// 3. EXPORT
+//  3.  EXPORT
 module.exports = router
