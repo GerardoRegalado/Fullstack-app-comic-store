@@ -1,0 +1,26 @@
+<h1>Listado de libros</h1>
+
+
+
+{{#each data}}
+    <div>
+        <h1>{{comicName}} # {{volumeNumber}}</h1>
+        <h1>${{price}}mxn</h1>
+        <h3>{{writer}}</h3>
+        <h3>{{penciler}}</h3>
+        <h3>{{coverArtist}}</h3>
+        <h4>{{published}}</h4>
+        <h4>{{studio}}</h4>
+
+        <a href="/{{_id}}">see details</a>
+        <a href="/{{_id}}/edit">edit</a>
+
+        <form action="/{{_id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+
+
+
+    </div>
+{{/each}}
+

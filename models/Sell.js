@@ -54,6 +54,11 @@ const NewComicSchema = mongoose.Schema({
     studio: {
         type:       String,
         required:   false
+    },
+
+    price: {
+        type:       Number,
+        required:   true
     }
 
 })

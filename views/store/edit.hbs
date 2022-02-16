@@ -1,0 +1,86 @@
+<h1>Editar comic - {{comic.comicName}} #{{comic.volumeNumber}}</h1>
+
+<form action="/{{comic._id}}/edit" method="POST">
+
+<ol>
+    <li>
+    <label>Comic name</label>
+    <input name="comicName" type="text" value="{{comic.comicName}}" />
+    </li>
+
+    <li>
+    <label>Volume number</label>
+    <input name="volumeNumber" type="number" value="{{comic.volumeNumber}}"/>
+    </li>
+
+    <li>
+    <label>Publication date</label>
+    <input name="published" type="date" value="{{comic.published}}" />
+    </li>
+
+    <li>
+    <label>Writer</label>
+    <input name="writer" type="text" value="{{comic.writer}}" />
+    </li>
+
+    <li>
+    <label>Penciler</label>
+    <input name="penciler" type="text" value="{{comic.penciler}}" />
+    </li>
+
+    <li>
+    <label>Cover artist</label>
+    <input name="coverArtist" type="text" value="{{comic.coverArtist}}"/>
+    </li>
+
+    <li>
+    <label class="block text-sm font-medium text-gray-700">Description</label>
+    <div class="mt-1">
+    <input  name="description" type="text" value="{{comic.description}}" />
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="condition" class="block text-sm font-medium text-gray-700">Condition</label>
+    <select id="condition" name="condition" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
+    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.condition}}">
+    <option>New</option>
+    <option>Used</option>
+    </select>
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="shipping" class="block text-sm font-medium text-gray-700">Shipping</label>
+    <select id="shipping" name="shipping" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
+    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.shipping}}">
+    <option>For Free</option>
+    <option>Shipping Collect</option>
+    </select>
+    </div>
+    </li>
+    
+    <li>
+    <div>
+    <label for="studio" class="block text-sm font-medium text-gray-700">Studio</label>
+    <select id="studio" name="studio" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
+    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.studio}}">
+    <option>Marvel studios</option>
+    <option>Other collections</option>
+    </select>
+    </div>
+    </li>
+
+    <button type="submit">Publish</button>
+
+</ol>
+
+
+
+
+
+
+
+</form>
