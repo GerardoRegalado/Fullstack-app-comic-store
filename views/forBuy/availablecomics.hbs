@@ -1,0 +1,19 @@
+<p>Hola</p>
+
+
+{{#each comicdata}}
+    <div>
+        <h1>{{comicName}}</h1> {{volumeNumber}}</h1>
+        <h1>${{price}}mxn</h1>
+        <h4>{{published}}</h4>
+        <h4>{{studio}}</h4>
+        <a href="/purchasing/availableComic/{{_id}}">see details</a>
+        <a href="#">Buy</a>
+   <hr />
+
+    </div>
+ 
+
+{{/each}}
+
+

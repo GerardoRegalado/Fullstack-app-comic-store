@@ -18,7 +18,7 @@ exports.authAreas =  (req,res,next) => {      //esta madre se va anclar a las ru
 exports.privateAreas= (req,res,next) => {
 
     if(!req.session.currentUser){
-
+        console.log(req.session.currentUser)
         res.redirect("login")
         return
     }   

@@ -18,7 +18,7 @@ const NewComicSchema = mongoose.Schema({
 
     published: {
         type:       Date,
-        required:   true
+        required:   false
     },
 
     writer: {

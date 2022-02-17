@@ -34,7 +34,9 @@ app.use((req, res, next) => {
 //  3.2 PRINCIPAL ROUTES
 app.use("/", require("./routes/index"))
 app.use("/", require("./routes/user"))
-app.use("/", require("./routes/store"))
+app.use("/sale", require("./routes/forSale"))
+app.use("/purchasing", require("./routes/forBuy"))
+
 
 
 

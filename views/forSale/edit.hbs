@@ -1,6 +1,6 @@
 <h1>Editar comic - {{comic.comicName}} #{{comic.volumeNumber}}</h1>
 
-<form action="/{{comic._id}}/edit" method="POST">
+<form action="/sale/{{comic._id}}/edit" method="POST">
 
 <ol>
     <li>
@@ -72,6 +72,15 @@
     </select>
     </div>
     </li>
+
+    <li>
+    <label class="block text-sm font-medium text-gray-700">Price $</label>
+    <div class="mt-1">
+    <input  name="price" type="text" value="{{comic.price}}" />
+    </div>
+    </li>
+   
+
 
     <button type="submit">Publish</button>
 

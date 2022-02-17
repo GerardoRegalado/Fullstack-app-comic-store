@@ -5,17 +5,17 @@ const bcryptjs = require("bcryptjs")
 const req = require("express/lib/request")
 const async = require("hbs/lib/async")
 const mongoose = require("mongoose")
-const NewComic = require("../models/Sell")
+const NewComic = require("../models/NewComicForSale")
 
 //  2. FUNCTIONS
 
 exports.getMenu = (req,res) => {
 
-    res.render("store/store")
+    res.render("forSale/store")
 }
 
 exports.sell = (req,res) => {
-    res.render("store/sell")
+    res.render("forSale/sell")
 }
 
 
@@ -50,7 +50,7 @@ exports.sellForm = async (req,res) => {
         price
     })   
         console.log(newComicForSell)
-        res.redirect("/mylist")
+        res.redirect("/sale/mylist")
         
     
     } catch (error) {
@@ -73,7 +73,7 @@ exports.myList= async (req, res) => {
     try {
         const foundComics = await NewComic.find({})
         
-        res.render("store/mylist", {
+        res.render("forSale/mylist", {
             data: foundComics
         })
         
@@ -89,7 +89,7 @@ exports.getSingleComic= async (req,res) => {
 
     const getTheComic= await NewComic.findById(comicID)
 
-    res.render("store/singlecomic", {
+    res.render("forSale/singlecomic", {
         comic: getTheComic
     })
 
@@ -101,7 +101,7 @@ exports.updateComic= async (req,res) => {
 
         const foundComic = await NewComic.findById(comicID)
 
-        res.render("store/edit", {
+        res.render("forSale/edit", {
             comic: foundComic
         })
 
@@ -121,7 +121,8 @@ exports.updateComicForm= async (req,res) => {
         description,
         condition,
         shipping,
-        studio } = req.body
+        studio,
+        price } = req.body
 
     const updatedComic = await NewComic.findByIdAndUpdate(comicID, {
         comicName,
@@ -133,10 +134,11 @@ exports.updateComicForm= async (req,res) => {
         description,
         condition,
         shipping,
-        studio 
+        studio,
+        price 
     }, {new: true})
 
-    return res.redirect(`/${updatedComic._id}`)
+    return res.redirect(`/sale/${updatedComic._id}`)
 }
 
 exports.deleteComic = async (req,res) => {
@@ -145,6 +147,6 @@ exports.deleteComic = async (req,res) => {
 
         await NewComic.findByIdAndDelete(comicID)
 
-        res.redirect("/mylist")
+        res.redirect("/sale/mylist")
 
 }
