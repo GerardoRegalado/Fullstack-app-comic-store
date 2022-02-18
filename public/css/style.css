@@ -1,23 +1,141 @@
 /*A. IMPORT*/
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 
 
-/* B. FONT */
-body {
+/* B. HEADER */
+header {
     
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Bangers', cursive;
+}
+
+#headerText {
+    color: #010608;                
+    text-shadow: 0 1px 0px #010608, 1px 0 0px #010608, 1px 2px 1px #010608, 2px 1px 1px #010608, 2px 3px 2px #010608, 3px 2px 2px #010608
+
+    , 3px 4px 2px #010608,4px 3px 3px #5395b6, 4px 5px 3px #5395b6, 5px 4px 2px #5395b6, 5px 6px 2px #5395b6, 6px 5px 2px #5395b6
+
+    , 6px 7px 1px #378ab4, 7px 6px 1px #378ab4,7px 8px 0px #378ab4, 8px 7px 0px #AF2e60;
+    color: #f8d434;
+    }
+
+#headerSubtitle {
+
+    font-family: 'Bangers', cursive;
+    color: #f8d434;
+
+}
+
+header{
+    background: #FAC223;
+    background: -moz-linear-gradient(right, #FAC223 0%, #F4CE5E 31%, #947B4E 100%);
+    background: -webkit-linear-gradient(right, #FAC223 0%, #F4CE5E 31%, #947B4E 100%);
+    background: linear-gradient(to left, #FAC223 0%, #F4CE5E 31%, #947B4E 100%);
+}
+
+#sidebar{
+    background: #FAC223;
+    background: -moz-linear-gradient(bottom, #FAC223 0%, #F4CE5E 5%, #947B4E 100%);
+    background: -webkit-linear-gradient(bottom, #FAC223 0%, #F4CE5E 5%, #947B4E 100%);
+    background: linear-gradient(to top, #FAC223 0%, #F4CE5E 5%, #947B4E 100%);
+}
+
+#links{
+    
+    font-family: 'Bangers', cursive;
+    color: #f0efef;
+    
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    color: #f0efef;
+        
+}
+
+#links:hover{
+
+    text-shadow: 2px 2px 0 #947B4E, 2px -2px 0 #947B4E, -2px 2px 0 #947B4E, -2px -2px 0 #947B4E, 2px 0px 0 #947B4E, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    
+}
+
+
+#coloredButton {
+
+    background: #1C6EA4;
+    background: -moz-linear-gradient(left, #1C6EA4 0%, #2388CB 100%, #144E75 100%);
+    background: -webkit-linear-gradient(left, #1C6EA4 0%, #2388CB 100%, #144E75 100%);
+    background: linear-gradient(to right, #1C6EA4 0%, #2388CB 100%, #144E75 100%);
+    
+}
+
+#coloredButton:hover {
+    
+    background: #1C6EA4; 
+      
+}
+
+#headerHello{
+
+    font-family: 'Bangers', cursive;
+    color: #10577a;
+
+}
+
+#headerUsername{
+
+    font-family: 'Bangers', cursive;
+ 
 
 }
 
 
-/*C. SELECTORS */
+
+
+/* C HOME */
+
+#imagesHome{
+    width: 75%;
+    height: 75%;
+    border: 5px double #1C6EA4;
+
+}
+
+#titleHome {
+
+    font-family: 'Bangers', cursive;
+    color: #FAC223;
+    
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    color: #FAC223;
+
+    width: 80%;
+    
+
+}
+
+#subtitleHome {
+
+    font-family: 'Comic Neue', cursive;
+    color: #1C6EA4;
+}
+
+/* lOGIN */
+
+#backGroundLogin {
+
+    background: rgba(208,228,245,0.94) url("https://i.pinimg.com/564x/b6/ae/8f/b6ae8fc72ec606931c4d1dc97d17448e.jpg") repeat fixed 100% 50%;
+}
+
+#loginText{
+
+    font-family: 'Bangers', cursive;
+    color: #f0efef;
+    
+    text-shadow: 2px 2px 0 #010608, 2px -2px 0 #010608, -2px 2px 0 #010608, -2px -2px 0 #010608, 2px 0px 0 #010608, 0px 2px 0 #010608, -2px 0px 0 #010608, 0px -2px 0 #010608;
+    color: #f0efef;
+
+  
+
+}
 
 
 
-
-/*D. CLASS */
-
-
-
-/*E. MEDIA QUERIES */
