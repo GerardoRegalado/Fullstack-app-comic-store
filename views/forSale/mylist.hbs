@@ -1,9 +1,52 @@
-<h1>Listado de libros</h1>
-
 
 
 {{#each data}}
-    <div>
+  <li>
+          <div class="space-y-4">
+            <div class="aspect-w-3 aspect-h-2">
+              <img width="20%" height="20%" id="imagesHome" class="object-cover shadow-lg rounded-lg" src="{{image}}" alt="">
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-lg leading-6 font-medium space-y-1">
+                <h3>{{comicName}} # {{volumeNumber}} </h3> 
+              </div>
+              <div class="text-small leading-4 font-small space-y-1">
+                <h4>Published: {{published}}</h4>
+                <h4>Writer: {{writer}}</h4>
+                <h4>Price: {{price}} usd</h4>
+              </div>
+
+
+                <a href="/sale/{{_id}}" class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 
+                shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >See details </a>
+               
+
+             
+                <a href="/sale/{{_id}}/edit" class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 
+                shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> edit </a>
+                
+
+                <form action="/sale/{{_id}}/delete" method="POST">
+                <button class="inline-flex items-center px-2.5 py-1.5 border border-red-300 
+                shadow-sm text-xs font-medium rounded text-white bg-red-500 hover:bg-red-600 
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Delete</button>
+                </form>
+            <hr />
+
+            </div>
+          </div>
+        </li>
+{{/each}}
+
+
+          
+
+
+    {{!-- <div>
+        <h1>{{image}}</h1>
         <h1>{{comicName}} # {{volumeNumber}}</h1>
         <h1>${{price}}mxn</h1>
         <h3>{{writer}}</h3>
@@ -21,6 +64,4 @@
     <hr />
 
 
-    </div>
-{{/each}}
-
+    </div> --}}

@@ -6,6 +6,11 @@ const mongoose  =require("mongoose")
 
 const NewComicSchema = mongoose.Schema({
 
+    image:{
+        type:       String,
+        required:   true
+    },
+
     comicName: {
         type:       String,
         required:   true

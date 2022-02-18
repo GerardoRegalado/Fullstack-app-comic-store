@@ -22,6 +22,7 @@ exports.sell = (req,res) => {
 exports.sellForm = async (req,res) => {
 
     const { 
+        image,
         comicName,
         volumeNumber,
         published,
@@ -37,6 +38,7 @@ exports.sellForm = async (req,res) => {
     try {
     
     const newComicForSell= await NewComic.create({
+        image,
         comicName,
         volumeNumber,
         published,
@@ -59,7 +61,7 @@ exports.sellForm = async (req,res) => {
 
 		if (error instanceof mongoose.Error.ValidationError){
 			
-			return res.render("/store", {
+			return res.render("forSale/store", {
 				errorMessage: "Validation Server Error"
 			})
 		}
@@ -112,6 +114,7 @@ exports.updateComicForm= async (req,res) => {
     const { comicID } = req.params
 
     const { 
+        image,
         comicName,
         volumeNumber,
         published,
@@ -125,6 +128,7 @@ exports.updateComicForm= async (req,res) => {
         price } = req.body
 
     const updatedComic = await NewComic.findByIdAndUpdate(comicID, {
+        image,
         comicName,
         volumeNumber,
         published,

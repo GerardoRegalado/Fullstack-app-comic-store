@@ -1,50 +1,86 @@
-<h1>Editar comic - {{comic.comicName}} #{{comic.volumeNumber}}</h1>
+
+{{!-- plantilla --}}
+<h1>Edit comic - {{comic.comicName}} #{{comic.volumeNumber}}</h1>
 
 <form action="/sale/{{comic._id}}/edit" method="POST">
 
 <ol>
-    <li>
-    <label>Comic name</label>
-    <input name="comicName" type="text" value="{{comic.comicName}}" />
-    </li>
 
     <li>
-    <label>Volume number</label>
-    <input name="volumeNumber" type="number" value="{{comic.volumeNumber}}"/>
-    </li>
-
-    <li>
-    <label>Publication date</label>
-    <input name="published" type="date" value="{{comic.published}}" />
-    </li>
-
-    <li>
-    <label>Writer</label>
-    <input name="writer" type="text" value="{{comic.writer}}" />
-    </li>
-
-    <li>
-    <label>Penciler</label>
-    <input name="penciler" type="text" value="{{comic.penciler}}" />
-    </li>
-
-    <li>
-    <label>Cover artist</label>
-    <input name="coverArtist" type="text" value="{{comic.coverArtist}}"/>
-    </li>
-
-    <li>
-    <label class="block text-sm font-medium text-gray-700">Description</label>
-    <div class="mt-1">
-    <input  name="description" type="text" value="{{comic.description}}" />
+    <div>
+        <label class="block text-xl font-bold text-gray-700">Image</label>
+            <div class="mt-1 flex rounded-md shadow-sm">
+                <span class="inline-flex items-center px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm"> URL </span>
+                <input name="image" type="text" value="{{comic.image}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm" placeholder="www.example.com" />
+            </div>
     </div>
     </li>
 
     <li>
     <div>
-    <label for="condition" class="block text-sm font-medium text-gray-700">Condition</label>
-    <select id="condition" name="condition" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
-    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.condition}}">
+    <label for="comicName" class="block text-xl font-bold text-gray-700">Comic Name</label>
+    <div class="mt-1">
+    <input type="text" name="comicName" id="email" value="{{comic.comicName}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm" placeholder="Comic Name (year)">
+    </div>
+    </div>
+    </li>
+
+
+    <li>
+    <div>
+    <label for="volumeNumber" class="block text-xl font-bold text-gray-700">Volume Number</label>
+    <div class="mt-1">
+    <input type="number" name="volumeNumber" id="volumeNumber" value="{{comic.volumeNumber}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm">
+    </div>
+    </div>
+    </li>
+
+    <li>
+    <label class="block text-xl font-bold text-gray-700">Publication date</label>
+    <input name="published" type="date" value="{{comic.published}}" />
+    </li>
+
+     <li>
+    <div>
+    <label for="writer" class="block text-xl font-bold text-gray-700">Writer</label>
+    <div class="mt-1">
+    <input type="text" name="writer" id="writer" value="{{comic.writer}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm">
+    </div>
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="penciler" class="block text-xl font-bold text-gray-700">Penciler</label>
+    <div class="mt-1">
+    <input type="text" name="penciler" id="penciler" value="{{comic.penciler}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm">
+    </div>
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="penciler" class="block text-xl font-bold text-gray-700">Cover Artist</label>
+    <div class="mt-1">
+    <input type="text" name="coverArtist" id="coverArtist" value="{{comic.coverArtist}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm">
+    </div>
+    </div>
+    </li>
+
+    <li>
+   <div>
+    <label for="description" class="block text-xl font-bold text-gray-700">Description</label>
+    <div class="mt-1">
+    <input type="text">
+    <textarea rows="4" name="description" id="description" value="{{comic.description}}" class=" items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm"></textarea>
+    </div>
+    </div>
+    </li>
+
+    <li>
+    <div>
+    <label for="condition" class="block text-xl font-bold text-gray-700">Condition</label>
+    <select id="condition" name="condition" value="{{comic.condition}}" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
     <option>New</option>
     <option>Used</option>
     </select>
@@ -53,9 +89,8 @@
 
     <li>
     <div>
-    <label for="shipping" class="block text-sm font-medium text-gray-700">Shipping</label>
-    <select id="shipping" name="shipping" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
-    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.shipping}}">
+    <label for="shipping" class="block text-xl font-bold text-gray-700">Shipping</label>
+    <select id="shipping" name="shipping" value="{{comic.shipping}}" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
     <option>For Free</option>
     <option>Shipping Collect</option>
     </select>
@@ -64,32 +99,34 @@
     
     <li>
     <div>
-    <label for="studio" class="block text-sm font-medium text-gray-700">Studio</label>
-    <select id="studio" name="studio" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none 
-    focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" value="{{comic.studio}}">
+    <label for="studio" class="block text-xl font-bold text-gray-700">Studio</label>
+    <select id="studio" name="studio" value="{{comic.studio}}" class="mt-1 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
     <option>Marvel studios</option>
     <option>Other collections</option>
     </select>
     </div>
     </li>
 
+  
+   
     <li>
-    <label class="block text-sm font-medium text-gray-700">Price $</label>
+    <div>
+    <label for="price" class="block text-xl font-bold text-gray-700">Price </label>
     <div class="mt-1">
-    <input  name="price" type="text" value="{{comic.price}}" />
+    <input name="price" id="price" value="{{comic.price}}" class="inline-flex items-center block w-60 px-3 rounded-l-md border border-r-5 border-gray-800 bg-gray-50 text-gray-500 sm:text-sm" placeholder="USD">
+    </div>
     </div>
     </li>
    
 
-
-    <button type="submit">Publish</button>
+    <button type="submit" class="mt-5 inline-flex items-center px-10 py-2 border border-transparent 
+    text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Publish</button>
 
 </ol>
 
-
-
-
-
-
-
 </form>
+
+
+
+
